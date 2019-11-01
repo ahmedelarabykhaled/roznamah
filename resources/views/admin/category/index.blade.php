@@ -7,6 +7,10 @@
 		padding: 15px;
 		text-align: center;
 	}
+	a
+	{
+		margin-top: 10px;
+	}
 </style>
 
 <section dir="rtl">
@@ -14,8 +18,8 @@
 		<a href="{{route('category.create')}} " class="btn btn-success">اضافه موضوع جديد</a>
 		<a href="{{route('subcategory.create')}} " class="btn btn-success">اضافه موضوع فرعى جديد</a>
 		<h2 class="text-center">كل المواضيع</h2>
-		<div>
-			<table border="2px" style="width: 100%">
+		<div class="table-responsive">
+			<table border="2px" style="width: 100%" class="table">
 				<thead>
 					<th style="width: 20px;">الرقم</th>
 					<th>الموضوع</th>

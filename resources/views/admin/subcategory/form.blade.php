@@ -7,7 +7,7 @@
 		@if(session('message'))
 			<div class="alert alert-success"> {{session('message')}} </div>
 		@endif
-		<a href="{{route('category.index')}} ">عوده</a>
+		<a href="{{route('category.index')}} " style="border: 1px #000 solid;padding: 9px;border-radius: 5px;color: #000;margin-bottom:10px ">عوده</a>
 		@if(isset($subcategory))
 		<form method="post" action="{{route('subcategory.update',$subcategory->id)}} ">
 			@method('put')
@@ -35,17 +35,12 @@
 	</div>
 </section>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
+@push('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
 <script>
-	ClassicEditor
-	.create( document.querySelector( '#editor' ) )
-	.then( editor => {
-		console.log( editor );
-	} )
-	.catch( error => {
-		console.error( error );
-	} );
+	$('textarea').summernote();
 </script>
 
+@endpush
 
 @endsection

@@ -13,7 +13,7 @@
 		@if(session('message'))
 			<div class="alert alert-success"> {{session('message')}} </div>
 		@endif
-		<a href="{{route('category.index')}} ">عوده</a>
+		<a href="{{route('category.index')}} " style="border: 1px #000 solid;padding: 9px;border-radius: 5px;color: #000;margin-bottom:10px ">عوده</a>
 		<div></div>
 		<a href="{{route('subcategory.create')}} " class="btn btn-success" style="margin-top: 10px;">اضافه موضوع فرعى جديد</a>
 		@if(!isset($category))
@@ -32,7 +32,7 @@
 			</div>
 		</form>
 		@if(isset($category))
-			<div class="">
+			<div class="tabel-responsive" style="overflow-x: scroll;" >
 				<table class="table" border="2px">
 					<thead>
 						<th>اسم الموضوع الفرعى</th>

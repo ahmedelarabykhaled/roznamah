@@ -23,6 +23,7 @@
     <link href="{{url('admin//plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}} " rel="stylesheet">
     <!-- animation CSS -->
     <link href="{{url('admin/css/animate.css')}} " rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" />
     <!-- Custom CSS -->
     <link href="{{url('admin/css/style.css')}} " rel="stylesheet">
     <!-- color CSS -->
@@ -83,7 +84,7 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <div class="navbar-default sidebar" role="navigation">
+        <div class="navbar-default sidebar" role="navigation" dir="rtl">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
                     <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
@@ -160,6 +161,7 @@
     <script src="{{url('admin/js/custom.min.js')}} "></script>
     <script src="{{url('admin/js/dashboard1.js')}} "></script>
     <script src="{{url('admin/plugins/bower_components/toast-master/js/jquery.toast.js')}} "></script>
+    @stack('js')
 </body>
 
 </html>
