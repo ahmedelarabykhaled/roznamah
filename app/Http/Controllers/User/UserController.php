@@ -12,8 +12,23 @@ use App\Models\SubCategory;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if (!isset($request->page)) {
+            $page = 1;
+            $first_date = Date::where('date','like','%-'.date('m').'-'.date('d'))->get();
+            if (sizeof($first_date) == 0) {
+                return redirect('/?page=1');
+            }
+            $dates = Date::orderBy('date','asc')->get();
+            foreach ($dates as $key => $d) {
+                if ($d->id == $first_date[0]->id) {
+                    $page = $key+1;
+                    break;
+                }
+            }
+            return redirect('/?page='.$page);
+        }
     	$date = Date::with('day','aldor','star','alfajr','altala')->orderBy('date', 'asc')->paginate(1);
     	$categories = Category::get();
     	return view('welcome',compact('date','categories'));
